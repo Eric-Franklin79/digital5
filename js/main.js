@@ -21,6 +21,7 @@ window.onload = function() {
        game.load.image('blue', 'assets/blue.png');
        game.load.image('red', 'assets/red.png');
        game.load.image('jail', 'assets/jail.png');
+       game.load.image('win', 'assets/win.png');
        //load the cars
        game.load.atlasJSONHash('carB', 'assets/carBs.png', 'assets/carBs.json');
        game.load.atlasJSONHash('carB2', 'assets/carB2s.png', 'assets/carB2s.json');
@@ -54,7 +55,7 @@ window.onload = function() {
    	  swing = game.input.keyboard.addKey(Phaser.Keyboard.Q);
    	  game.camera.follow(player);
    	  timer = game.time.create(false);
-   	  timer.add(10000, jail, this);
+   	  timer.add(20000, jail, this);
    }
     
    function update(){
@@ -162,19 +163,27 @@ window.onload = function() {
    function damCar(play, car){
    	   if(swing.downDuration(1)){
    	   	   player2.animations.play('swing');
+   	   	 
    	   	 if(car.frame < 5){
-   	   	 	 swingNum++;
-   	   	 	 score += 100;
-   	   	 	 scoreText.setText("Score: $" + String(score));
-   	   	 	 if(swingNum === 5){
-   	   	 	 	 car.frame += 1;
-   	   	 	 	 swingNum = 0;
-   	   	 	 	 score += 10000;
-   	   	 	 	 scoreText.setText("Score: $" + String(score));
-   	   	 	 }
+   	   	 	 if(!special){
+				 swingNum++;
+				 score += 100;
+				 scoreText.setText("Score: $" + String(score));
+				 if(swingNum === 5){
+					 car.frame += 1;
+					 swingNum = 0;
+					 score += 10000;
+					 scoreText.setText("Score: $" + String(score));
+				 }
+			 }
+			 if(special){
+			 	  car.frame += 1;
+			 	  score += 10500;
+			 	  scoreText.setText("Score: $" + String(score));
+			 }
    	   	 }
    	   	 if(car.frame > 4){
-   	   	 	car.animations.play('burn'); 
+   	   	 	car.animations.play('burn');
    	   	 }
    	   }
    }
@@ -283,7 +292,7 @@ window.onload = function() {
 /* */  	   carGG = game.add.sprite(265, 579, 'carG', 0);
   	   game.physics.arcade.enable(carGG);
    	   carGG.animations.add('burn', [5,6], 10, true, true);
-/* */ 	   carB2 = game.add.sprite(612, 666, 'carB2', 0);
+/* */ 	   carB2 = game.add.sprite(610, 664, 'carB2', 0);
    	   game.physics.arcade.enable(carB2);
    	   carB2.animations.add('burn', [5,6], 10, true, true);
 /* */  	   carR2 = game.add.sprite(582, 864, 'carR2', 0);
@@ -321,6 +330,19 @@ window.onload = function() {
    }
    function win(){
    	   timer.stop();
-   	   //create win screen
-   }
+   	   var win = game.add.sprite(0,0, 'win');
+   	   game.camera.reset();
+   	   game.camera.follow(win);
+   	   var style =  { font: "bold 25px Verdana", fill: "#FFFFFF", align: "center" };
+   	   if(score == 0){
+   	   	   var winText = game.add.text(35, 50, 'You may have escaped without getting \n caught but you did not finish the job! \n Your actions have cause problems!', style);
+   	   }
+   	   else if(score == 525000){
+   	   	   var winText = game.add.text(35, 50, 'You have destoryed the Sports Car \nDelaership and escaped without being \ncaught! Your job here is done.', style);
+   	   }
+   	   else{
+   	   	   var winText = game.add.text(35, 10, 'You have destoryed most of the \nSports Car Dealership and escaped \nwithout being caught! But there are \nstill some cars still in there. \nYour job here is done, \nwe\'ll get someone else to finish the job.', style);
+   	   }
+   	   var finalScore = game.add.text(115, 550, 'Amount of Damage caused: \n$' + String(score), style);
+	}
 };
