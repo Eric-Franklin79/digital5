@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Flat Line</title>
+    <title>sumting</title>
     <script src="js/phaser.js"></script>
     <script src="js/main.js"></script>
 
@@ -22,59 +22,46 @@ body
 <body>
 <div id="game"></div>
 <div id="readme">
-<h2>Flat Line</h2>
+<h2>Name</h2>
 <ul>
 
 <li><strong>High Concept:</strong>
-Get through a maze with out running out of time.
 </li>
 
 <li><strong>Player Experience Goals:</strong>
-I want the player to think about the path they take to get to the end, finding the path with the most blood bags may not be the highest scoring path.
 </li>
 
 <li><strong>Genre:</strong>
-This game is a puzzle game.
 </li>
 
 <li><strong>Game play:</strong>
-You move the player with the arrow keys. You have to go to the end of the maze by collecting more blood to extend the time.
 </li>
 
 <li><strong>Prototype goal:</strong>
-I was thinking of the other end of organ reciepient from the organ's side. What if the organ got left behind and it had to find it own way to its new body.
 </li>
 
 <li><strong>Features:</strong>
-This game features a maze with a short time limit to get to the end. You have to collect items to extend you time
 </li>
 
 <li><strong>Setting/Premise:</strong>
-The setting is a hospital.
 </li>
 
 <li><strong>Story:</strong>
-Getting ready for surgery, the surgen throws away his lunch. Mistaking the organ cooler for his lunch box. Now the new heart has to find its way throught the hospital and to its new body.
 </li>
 
 <li><strong>Target Audience:</strong>
-The target audience is anyone who wants to play: E for everyone.
 </li>
 
 <li><strong>Play time:</strong>
-Play time takes about 5 minutes.
 </li>
 
 <li><strong>Strategies:</strong>
-To get the highest score is best to leave some blood bags behind for others.
 </li>
 
 <li><strong>Prototype Assets:</strong>
-I created all of my assets on my own
 </li>
 
 <li><strong>Prototype Closest Other Game:</strong>
-I didnt model my game off of another but it does most likely resemble some.
 </li>
 
 </ul>

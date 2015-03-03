@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="32" tileheight="32" nextobjectid="48">
+ <tileset firstgid="1" name="dealershipTileset" tilewidth="32" tileheight="32">
+  <image source="dealershipTileset.png" trans="ffffff" width="300" height="300"/>
+ </tileset>
+ <layer name="background" width="30" height="30">
+  <data encoding="csv">
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,1,1,1,1,1,1,
+1,1,1,1,1,1,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,28,28,28,28,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,28,28,28,28,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,28,28,28,28,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,28,28,28,28,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,28,28,28,28,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,28,28,28,28,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,1,1,1,1,1,1,
+1,1,1,1,1,1,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,1,1,1,1,1,1,
+1,1,1,1,1,1,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,28,28,28,28,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,28,28,28,28,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,28,28,28,28,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,28,28,28,28,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,28,28,28,28,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,28,28,28,28,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,1,1,1,1,1,1,
+1,1,1,1,1,1,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,1,1,1,1,1,1,
+1,1,1,1,1,1,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,28,28,28,28,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,28,28,28,28,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,28,28,28,28,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+</data>
+ </layer>
+ <layer name="blocked" width="30" height="30">
+  <data encoding="csv">
+2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+2,14,13,12,13,12,13,12,13,12,13,12,13,12,13,12,13,12,13,12,13,12,13,12,13,12,13,12,19,2,
+2,14,10,11,10,11,10,11,10,11,10,11,10,11,10,11,10,11,10,11,10,11,10,11,10,11,10,11,19,2,
+2,14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,19,2,
+2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,
+2,0,0,0,0,0,0,21,20,0,0,0,0,0,0,0,0,0,0,0,21,20,0,0,0,0,0,0,0,2,
+2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,
+2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,
+2,0,0,0,21,12,3,3,3,3,3,3,3,0,0,0,0,3,3,3,3,3,3,3,13,20,0,0,0,2,
+2,0,0,0,21,11,5,0,0,0,0,3,4,0,0,0,0,5,3,0,0,0,0,3,10,20,0,0,0,2,
+2,21,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,
+2,14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,
+2,14,0,0,21,12,5,3,0,0,0,0,4,0,0,0,0,5,0,0,0,0,3,3,13,20,0,0,0,2,
+2,21,0,0,21,11,3,3,3,3,3,3,3,0,0,0,0,3,3,3,3,3,3,3,10,20,0,0,0,2,
+2,21,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,
+2,14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,
+2,14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,
+2,21,0,0,21,12,3,3,3,3,3,3,3,0,0,0,0,3,3,3,3,3,3,3,13,20,0,0,0,2,
+2,21,0,0,21,11,5,3,0,0,0,0,4,0,0,0,0,5,0,0,0,0,3,3,10,20,0,0,20,2,
+2,14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,19,2,
+2,14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,19,2,
+2,21,0,0,21,12,5,0,0,0,0,3,4,0,0,0,0,5,3,0,0,0,0,3,13,20,0,0,20,2,
+2,21,0,0,21,11,3,3,3,3,3,3,3,0,0,0,0,3,3,3,3,3,3,3,10,20,0,0,0,2,
+2,14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,
+2,14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,
+2,21,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,
+2,0,0,0,21,12,3,3,3,3,3,3,3,0,0,0,0,3,3,3,3,3,3,3,13,20,0,0,0,2,
+2,0,0,0,21,11,3,3,0,0,0,0,4,0,0,0,0,5,0,0,0,0,3,3,10,20,0,0,0,2,
+2,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,2,
+2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2
+</data>
+ </layer>
+ <objectgroup name="exit">
+  <object id="1" name="exit" type="door" gid="29" x="416.125" y="960">
+   <properties>
+    <property name="sprite" value="exit"/>
+    <property name="type" value="door"/>
+   </properties>
+  </object>
+  <object id="2" name="exit" type="door" gid="29" x="448.182" y="960">
+   <properties>
+    <property name="sprite" value="exit"/>
+    <property name="type" value="door"/>
+   </properties>
+  </object>
+  <object id="3" name="exit" type="door" gid="29" x="480.307" y="960">
+   <properties>
+    <property name="sprite" value="exit"/>
+    <property name="type" value="door"/>
+   </properties>
+  </object>
+  <object id="4" name="exit" type="door" gid="29" x="511.943" y="960">
+   <properties>
+    <property name="sprite" value="exit"/>
+    <property name="type" value="door"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="lazerU">
+  <object id="8" name="lazer" type="eni" gid="38" x="382.667" y="832">
+   <properties>
+    <property name="sprite" value="lazerR"/>
+    <property name="type" value="lazer"/>
+   </properties>
+  </object>
+  <object id="10" name="lazer" type="eni" gid="38" x="382.697" y="799.879">
+   <properties>
+    <property name="sprite" value="lazerR"/>
+    <property name="type" value="lazer"/>
+   </properties>
+  </object>
+  <object id="11" name="lazer" type="eni" gid="38" x="382.697" y="767.879">
+   <properties>
+    <property name="sprite" value="lazerR"/>
+    <property name="type" value="lazer"/>
+   </properties>
+  </object>
+  <object id="22" name="lazer" type="eni" gid="38" x="817.697" y="855.879">
+   <properties>
+    <property name="sprite" value="lazerR"/>
+    <property name="type" value="lazer"/>
+   </properties>
+  </object>
+  <object id="23" name="lazer" type="eni" gid="38" x="818.197" y="888.379">
+   <properties>
+    <property name="sprite" value="lazerR"/>
+    <property name="type" value="lazer"/>
+   </properties>
+  </object>
+  <object id="26" name="lazer" type="eni" gid="38" x="544.03" y="639.212">
+   <properties>
+    <property name="sprite" value="lazerR"/>
+    <property name="type" value="lazer"/>
+   </properties>
+  </object>
+  <object id="27" name="lazer" type="eni" gid="38" x="544.697" y="671.879">
+   <properties>
+    <property name="sprite" value="lazerR"/>
+    <property name="type" value="lazer"/>
+   </properties>
+  </object>
+  <object id="28" name="lazer" type="eni" gid="38" x="405.364" y="641.212">
+   <properties>
+    <property name="sprite" value="lazerR"/>
+    <property name="type" value="lazer"/>
+   </properties>
+  </object>
+  <object id="29" name="lazer" type="eni" gid="38" x="544.03" y="639.212">
+   <properties>
+    <property name="sprite" value="lazerR"/>
+    <property name="type" value="lazer"/>
+   </properties>
+  </object>
+  <object id="30" name="lazer" type="eni" gid="38" x="405.364" y="673.212">
+   <properties>
+    <property name="sprite" value="lazerR"/>
+    <property name="type" value="lazer"/>
+   </properties>
+  </object>
+  <object id="31" name="lazer" type="eni" gid="38" x="404.03" y="352.545">
+   <properties>
+    <property name="sprite" value="lazerR"/>
+    <property name="type" value="lazer"/>
+   </properties>
+  </object>
+  <object id="32" name="lazer" type="eni" gid="38" x="404.03" y="384.545">
+   <properties>
+    <property name="sprite" value="lazerR"/>
+    <property name="type" value="lazer"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="lazerR">
+  <object id="12" name="lazer" type="lazer" gid="37" x="111" y="896">
+   <properties>
+    <property name="sprite" value="lazerU"/>
+    <property name="tpye" value="lazer"/>
+   </properties>
+  </object>
+  <object id="15" name="lazer" type="lazer" gid="37" x="78.75" y="895.75">
+   <properties>
+    <property name="sprite" value="lazerU"/>
+    <property name="tpye" value="lazer"/>
+   </properties>
+  </object>
+  <object id="16" name="lazer" type="lazer" gid="37" x="416.292" y="735.917">
+   <properties>
+    <property name="sprite" value="lazerU"/>
+    <property name="tpye" value="lazer"/>
+   </properties>
+  </object>
+  <object id="17" name="lazer" type="lazer" gid="37" x="448.417" y="735.917">
+   <properties>
+    <property name="sprite" value="lazerU"/>
+    <property name="tpye" value="lazer"/>
+   </properties>
+  </object>
+  <object id="18" name="lazer" type="lazer" gid="37" x="480.542" y="735.917">
+   <properties>
+    <property name="sprite" value="lazerU"/>
+    <property name="tpye" value="lazer"/>
+   </properties>
+  </object>
+  <object id="19" name="lazer" type="lazer" gid="37" x="512.667" y="735.917">
+   <properties>
+    <property name="sprite" value="lazerU"/>
+    <property name="tpye" value="lazer"/>
+   </properties>
+  </object>
+  <object id="20" name="lazer" type="lazer" gid="37" x="768" y="853.917">
+   <properties>
+    <property name="sprite" value="lazerU"/>
+    <property name="tpye" value="lazer"/>
+   </properties>
+  </object>
+  <object id="21" name="lazer" type="lazer" gid="37" x="771.167" y="919.917">
+   <properties>
+    <property name="sprite" value="lazerU"/>
+    <property name="tpye" value="lazer"/>
+   </properties>
+  </object>
+  <object id="24" name="lazer" type="lazer" gid="37" x="794" y="853.917">
+   <properties>
+    <property name="sprite" value="lazerU"/>
+    <property name="tpye" value="lazer"/>
+   </properties>
+  </object>
+  <object id="25" name="lazer" type="lazer" gid="37" x="795.667" y="920.417">
+   <properties>
+    <property name="sprite" value="lazerU"/>
+    <property name="tpye" value="lazer"/>
+   </properties>
+  </object>
+  <object id="33" name="lazer" type="lazer" gid="37" x="286.958" y="203.917">
+   <properties>
+    <property name="sprite" value="lazerU"/>
+    <property name="tpye" value="lazer"/>
+   </properties>
+  </object>
+  <object id="34" name="lazer" type="lazer" gid="37" x="319.625" y="204.583">
+   <properties>
+    <property name="sprite" value="lazerU"/>
+    <property name="tpye" value="lazer"/>
+   </properties>
+  </object>
+  <object id="35" name="lazer" type="lazer" gid="37" x="350.958" y="204.583">
+   <properties>
+    <property name="sprite" value="lazerU"/>
+    <property name="tpye" value="lazer"/>
+   </properties>
+  </object>
+  <object id="36" name="lazer" type="lazer" gid="37" x="382.958" y="205.25">
+   <properties>
+    <property name="sprite" value="lazerU"/>
+    <property name="tpye" value="lazer"/>
+   </properties>
+  </object>
+  <object id="37" name="lazer" type="lazer" gid="37" x="415.625" y="205.25">
+   <properties>
+    <property name="sprite" value="lazerU"/>
+    <property name="tpye" value="lazer"/>
+   </properties>
+  </object>
+  <object id="38" name="lazer" type="lazer" gid="37" x="448.292" y="205.25">
+   <properties>
+    <property name="sprite" value="lazerU"/>
+    <property name="tpye" value="lazer"/>
+   </properties>
+  </object>
+  <object id="39" name="lazer" type="lazer" gid="37" x="480.958" y="205.25">
+   <properties>
+    <property name="sprite" value="lazerU"/>
+    <property name="tpye" value="lazer"/>
+   </properties>
+  </object>
+  <object id="40" name="lazer" type="lazer" gid="37" x="512.958" y="205.25">
+   <properties>
+    <property name="sprite" value="lazerU"/>
+    <property name="tpye" value="lazer"/>
+   </properties>
+  </object>
+  <object id="41" name="lazer" type="lazer" gid="37" x="544.958" y="205.25">
+   <properties>
+    <property name="sprite" value="lazerU"/>
+    <property name="tpye" value="lazer"/>
+   </properties>
+  </object>
+  <object id="42" name="lazer" type="lazer" gid="37" x="577.625" y="205.25">
+   <properties>
+    <property name="sprite" value="lazerU"/>
+    <property name="tpye" value="lazer"/>
+   </properties>
+  </object>
+  <object id="43" name="lazer" type="lazer" gid="37" x="610.292" y="205.917">
+   <properties>
+    <property name="sprite" value="lazerU"/>
+    <property name="tpye" value="lazer"/>
+   </properties>
+  </object>
+  <object id="44" name="lazer" type="lazer" gid="37" x="158.958" y="479.25">
+   <properties>
+    <property name="sprite" value="lazerU"/>
+    <property name="tpye" value="lazer"/>
+   </properties>
+  </object>
+  <object id="45" name="lazer" type="lazer" gid="37" x="125.625" y="480.583">
+   <properties>
+    <property name="sprite" value="lazerU"/>
+    <property name="tpye" value="lazer"/>
+   </properties>
+  </object>
+  <object id="46" name="lazer" type="lazer" gid="37" x="92.9583" y="480.583">
+   <properties>
+    <property name="sprite" value="lazerU"/>
+    <property name="tpye" value="lazer"/>
+   </properties>
+  </object>
+  <object id="47" name="lazer" type="lazer" gid="37" x="60.2917" y="481.25">
+   <properties>
+    <property name="sprite" value="lazerU"/>
+    <property name="tpye" value="lazer"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
