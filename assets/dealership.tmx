@@ -208,19 +208,7 @@
     <property name="tpye" value="lazer"/>
    </properties>
   </object>
-  <object id="20" name="lazer" type="lazer" gid="37" x="768" y="853.917">
-   <properties>
-    <property name="sprite" value="lazerU"/>
-    <property name="tpye" value="lazer"/>
-   </properties>
-  </object>
   <object id="21" name="lazer" type="lazer" gid="37" x="771.167" y="919.917">
-   <properties>
-    <property name="sprite" value="lazerU"/>
-    <property name="tpye" value="lazer"/>
-   </properties>
-  </object>
-  <object id="24" name="lazer" type="lazer" gid="37" x="794" y="853.917">
    <properties>
     <property name="sprite" value="lazerU"/>
     <property name="tpye" value="lazer"/>

@@ -428,23 +428,6 @@
                 {
                  "gid":37,
                  "height":0,
-                 "id":20,
-                 "name":"lazer",
-                 "properties":
-                    {
-                     "sprite":"lazerU",
-                     "tpye":"lazer"
-                    },
-                 "rotation":0,
-                 "type":"lazer",
-                 "visible":true,
-                 "width":0,
-                 "x":768,
-                 "y":853.916666666667
-                }, 
-                {
-                 "gid":37,
-                 "height":0,
                  "id":21,
                  "name":"lazer",
                  "properties":
@@ -458,23 +441,6 @@
                  "width":0,
                  "x":771.166666666667,
                  "y":919.916666666667
-                }, 
-                {
-                 "gid":37,
-                 "height":0,
-                 "id":24,
-                 "name":"lazer",
-                 "properties":
-                    {
-                     "sprite":"lazerU",
-                     "tpye":"lazer"
-                    },
-                 "rotation":0,
-                 "type":"lazer",
-                 "visible":true,
-                 "width":0,
-                 "x":794,
-                 "y":853.916666666667
                 }, 
                 {
                  "gid":37,
