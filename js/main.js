@@ -110,16 +110,16 @@ window.onload = function() {
 		   player.body.velocity.x = 0;
 		   player.body.velocity.y = 0;
 		   if(cursors.left.isDown){
-			   player.body.velocity.x = -280;
+			   player.body.velocity.x = -80;
 		   }
 		   else if(cursors.right.isDown){
-			   player.body.velocity.x = 280;
+			   player.body.velocity.x = 80;
 		   }
 		   if(cursors.up.isDown){
-			   player.body.velocity.y = -280;
+			   player.body.velocity.y = -80;
 		   }
 		   else if(cursors.down.isDown){
-			   player.body.velocity.y = 280;
+			   player.body.velocity.y = 80;
 		   }
    	   }
    	   //controls if dealership player is alive
@@ -127,17 +127,20 @@ window.onload = function() {
 		   player2.body.velocity.x = 0;
 		   player2.body.velocity.y = 0;
 		   if(cursors.left.isDown){
-			   player2.body.velocity.x = -280;
+			   player2.body.velocity.x = -180;
 		   }
 		   else if(cursors.right.isDown){
-			   player2.body.velocity.x = 280;
+			   player2.body.velocity.x = 180;
 		   }
 		   if(cursors.up.isDown){
-			   player2.body.velocity.y = -280;
+			   player2.body.velocity.y = -180;
 		   }
 		   else if(cursors.down.isDown){
-			   player2.body.velocity.y = 280;
+			   player2.body.velocity.y = 180;
 		   }
+		   if(swing.downDuration(1)){
+		   	   player2.animations.play('swing');
+   	   	   }
    	   }
    	   if(timer.running){
    	   	timeText.setText(String(20-Math.floor(timer.seconds)));   
@@ -192,18 +195,18 @@ window.onload = function() {
    	   	 	 if(!special){
 				 swingNum++;
 				 score += 100;
-				 scoreText.setText("Score: $" + String(score));
+				 scoreText.setText("Damage: $" + String(score));
 				 if(swingNum === 5){
 					 car.frame += 1;
 					 swingNum = 0;
 					 score += 10000;
-					 scoreText.setText("Score: $" + String(score));
+					 scoreText.setText("Damage: $" + String(score));
 				 }
 			 }
 			 if(special){
 			 	  car.frame += 1;
 			 	  score += 10500;
-			 	  scoreText.setText("Score: $" + String(score));
+			 	  scoreText.setText("Damage: $" + String(score));
 			 }
    	   	 }
    	   	 if(car.frame > 4){
@@ -211,6 +214,7 @@ window.onload = function() {
    	   	 }
    	   }
    }
+  
    // creates the end game situation
    function popo(play, laze){
    	   laze.kill();
@@ -254,7 +258,7 @@ window.onload = function() {
    	   doorS = game.add.group();
    	   doorS.enableBody = true;
    	   map.createFromObjects('specialDoor', 41, 'doorS', 0, true, false, doorS);
-   	   var styleS = { font: "bold 15px Verdana", fill: "#FFFFFF", align: "left" };
+   	   var styleS = { font: "bold 20px Verdana", fill: "#FFFFFF", align: "left" };
    	   scoreText = game.add.text(20, 10, 'Damage: $' + String(score), styleS);
    	   scoreText.fixedToCamera = true;
    	   if(flashing){
@@ -298,7 +302,7 @@ window.onload = function() {
    	   createCars();
    	   }
    	   ifDealer = true;
-   	   var styleS = { font: "bold 15px Verdana", fill: "#000000", align: "left" };
+   	   var styleS = { font: "bold 20px Verdana", fill: "#000000", align: "left" };
    	   scoreText = game.add.text(20, 10, 'Damage: $' + String(score), styleS);
    	   scoreText.fixedToCamera = true;
    }

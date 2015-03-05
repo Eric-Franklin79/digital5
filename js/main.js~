@@ -10,10 +10,13 @@ window.onload = function() {
        game.load.image('streetTiles', 'assets/tileSet.png');
        game.load.tilemap('dealer', 'assets/dealership.json', null, Phaser.Tilemap.TILED_JSON);
        game.load.image('dealerTiles', 'assets/dealershipTileset.png');
+       game.load.tilemap('secret', 'assets/secret.json', null, Phaser.Tilemap.TILED_JSON);
+       game.load.image('secretTiles', 'assets/secrateTileset.png');
        game.load.image('door', 'assets/door.png');
        game.load.image('door2', 'assets/door2.png');
        game.load.image('doorS', 'assets/doorS.png');
        game.load.image('dude', 'assets/player1.png');
+       game.load.image('dudeS', 'assets/player1s.png');
        game.load.atlasJSONHash('player2', 'assets/player2p.png', 'assets/player2p.json');
        game.load.image('exit', 'assets/exit.png');
        game.load.image('lazerR', 'assets/lazerR.png');
@@ -21,6 +24,9 @@ window.onload = function() {
        game.load.image('blue', 'assets/blue.png');
        game.load.image('red', 'assets/red.png');
        game.load.image('jail', 'assets/jail.png');
+       game.load.image('win', 'assets/win.png');
+       game.load.image('mallet', 'assets/mallet.png');
+       game.load.image('ped', 'assets/ped.png');
        //load the cars
        game.load.atlasJSONHash('carB', 'assets/carBs.png', 'assets/carBs.json');
        game.load.atlasJSONHash('carB2', 'assets/carB2s.png', 'assets/carB2s.json');
@@ -31,7 +37,7 @@ window.onload = function() {
     }
     var map;
     var blockTile, blockTile2;
-    var door, door2, doorS, exit;
+    var door, door2, doorS, exit, doorO, mallet;
     var player, player2;
     var cursors;
     var carB, carB2, carG, carG2, carR, carR2;
@@ -54,11 +60,13 @@ window.onload = function() {
    	  swing = game.input.keyboard.addKey(Phaser.Keyboard.Q);
    	  game.camera.follow(player);
    	  timer = game.time.create(false);
-   	  timer.add(10000, jail, this);
+   	  timer.add(20000, jail, this);
    }
     
    function update(){
     	   game.physics.arcade.collide(player, blockTile);
+    	   game.physics.arcade.overlap(player, doorO, enterO, null, this);
+    	   game.physics.arcade.overlap(player, mallet, pickUp, null, this);
     	    if(ifDealer === false){
     	   game.physics.arcade.overlap(player, door, enterD, null, this);
     	   game.physics.arcade.overlap(player, door2, enterD, null, this);
@@ -130,9 +138,12 @@ window.onload = function() {
 		   else if(cursors.down.isDown){
 			   player2.body.velocity.y = 280;
 		   }
+		   if(swing.downDuration(1)){
+		   	   player2.animations.play('swing');
+   	   	   }
    	   }
    	   if(timer.running){
-   	   	timeText.setText(String(10-Math.floor(timer.seconds)));   
+   	   	timeText.setText(String(20-Math.floor(timer.seconds)));   
    	   }
    }
    //enter the dealership level
@@ -147,7 +158,24 @@ window.onload = function() {
    }
    //enter the secrate area
    function enterS(play, doo){
+   	   game.camera.reset();
+   	   player.kill();
+   	   map.destroy();
    	   loadS();
+   	   game.camera.follow(player);
+   }
+   function enterO(play, doo){
+   	   game.camera.reset();
+   	   player.kill();
+   	   map.destroy();
+   	   loadStreet();
+   	   player.reset(592, 747);
+   	   game.camera.follow(player);
+   }
+   function pickUp(play, item){
+   	   special = true;
+   	   play.loadTexture('dudeS');
+   	   item.loadTexture('ped');
    }
    //leave the dealership level into the street level
    function exitD(play, doo){
@@ -162,22 +190,31 @@ window.onload = function() {
    function damCar(play, car){
    	   if(swing.downDuration(1)){
    	   	   player2.animations.play('swing');
+   	   	 
    	   	 if(car.frame < 5){
-   	   	 	 swingNum++;
-   	   	 	 score += 100;
-   	   	 	 scoreText.setText("Score: $" + String(score));
-   	   	 	 if(swingNum === 5){
-   	   	 	 	 car.frame += 1;
-   	   	 	 	 swingNum = 0;
-   	   	 	 	 score += 10000;
-   	   	 	 	 scoreText.setText("Score: $" + String(score));
-   	   	 	 }
+   	   	 	 if(!special){
+				 swingNum++;
+				 score += 100;
+				 scoreText.setText("Score: $" + String(score));
+				 if(swingNum === 5){
+					 car.frame += 1;
+					 swingNum = 0;
+					 score += 10000;
+					 scoreText.setText("Score: $" + String(score));
+				 }
+			 }
+			 if(special){
+			 	  car.frame += 1;
+			 	  score += 10500;
+			 	  scoreText.setText("Score: $" + String(score));
+			 }
    	   	 }
    	   	 if(car.frame > 4){
-   	   	 	car.animations.play('burn'); 
+   	   	 	car.animations.play('burn');
    	   	 }
    	   }
    }
+  
    // creates the end game situation
    function popo(play, laze){
    	   laze.kill();
@@ -189,7 +226,7 @@ window.onload = function() {
    //sets and creates the end game warning text & sprites
    function flash(){
    	   var styleT = { font: "bold 30px Verdana", fill: "#FFFFFF", align: "left" };
-   	   timeText = game.add.text(game.world.centerX, 5, String(10-Math.floor(timer.seconds)), styleT);
+   	   timeText = game.add.text(game.world.centerX, 5, String(20-Math.floor(timer.seconds)), styleT);
    	   timeText.fixedToCamera = true;
    	   red = game.add.sprite(0,0,'red');
    	   blue = game.add.sprite(340,0,'blue');
@@ -204,8 +241,14 @@ window.onload = function() {
    	   blockTile = map.createLayer('blocked');
    	   map.setCollisionBetween(1, 100, true, 'blocked');
    	   backgroundLayer.resizeWorld();
-   	   player = game.add.sprite(300, 976, 'dude');
-   	  game.physics.arcade.enable(player);
+   	   if(!special){
+   	   	   player = game.add.sprite(300, 976, 'dude');
+   	   	   game.physics.arcade.enable(player);
+   	   }
+   	   else if(special){
+   	   	   player = game.add.sprite(592, 747, 'dudeS');
+   	   	   game.physics.arcade.enable(player);
+   	   }
    	   door = game.add.group();
    	   door.enableBody = true;
    	   map.createFromObjects('door', 58, 'door', 0, true, false, door);
@@ -264,8 +307,27 @@ window.onload = function() {
    	   scoreText.fixedToCamera = true;
    }
    function loadS(){
-   	   
-   }
+   	   map = game.add.tilemap('secret');
+   	   map.addTilesetImage('secrateTileset', 'secretTiles');
+   	   var backgroundLayer = map.createLayer('background');
+   	   blockTile = map.createLayer('blocked');
+   	   map.setCollisionBetween(1, 100, true, 'blocked');
+   	   backgroundLayer.resizeWorld();
+   	   if(!special){
+   	   	   player = game.add.sprite(324, 225, 'dude');
+   	   	   game.physics.arcade.enable(player);
+   	   }
+   	   else if(special){
+   	   	   player = game.add.sprite(324, 225, 'dudeS');
+   	   	   game.physics.arcade.enable(player);
+   	   }
+   	   doorO = game.add.group();
+   	   doorO.enableBody = true;
+   	   map.createFromObjects('door', 58, 'door', 0, true, false, doorO);
+   	   mallet = game.add.group();
+   	   mallet.enableBody = true;
+   	   map.createFromObjects('mallet', 111, 'mallet', 0, true, false, mallet);
+}
    //create the car objects and the car animations
    function createCars(){
 /* */ 	   carB = game.add.sprite(222, 287, 'carB', 0);
@@ -283,7 +345,7 @@ window.onload = function() {
 /* */  	   carGG = game.add.sprite(265, 579, 'carG', 0);
   	   game.physics.arcade.enable(carGG);
    	   carGG.animations.add('burn', [5,6], 10, true, true);
-/* */ 	   carB2 = game.add.sprite(612, 666, 'carB2', 0);
+/* */ 	   carB2 = game.add.sprite(610, 664, 'carB2', 0);
    	   game.physics.arcade.enable(carB2);
    	   carB2.animations.add('burn', [5,6], 10, true, true);
 /* */  	   carR2 = game.add.sprite(582, 864, 'carR2', 0);
@@ -321,6 +383,19 @@ window.onload = function() {
    }
    function win(){
    	   timer.stop();
-   	   //create win screen
-   }
+   	   var win = game.add.sprite(0,0, 'win');
+   	   game.camera.reset();
+   	   game.camera.follow(win);
+   	   var style =  { font: "bold 25px Verdana", fill: "#FFFFFF", align: "center" };
+   	   if(score == 0){
+   	   	   var winText = game.add.text(35, 50, 'You may have escaped without getting \n caught but you did not finish the job! \n Your actions have cause problems!', style);
+   	   }
+   	   else if(score == 525000){
+   	   	   var winText = game.add.text(35, 50, 'You have destoryed the Sports Car \nDelaership and escaped without being \ncaught! Your job here is done.', style);
+   	   }
+   	   else{
+   	   	   var winText = game.add.text(35, 10, 'You have destoryed most of the \nSports Car Dealership and escaped \nwithout being caught! But there are \nstill some cars still in there. \nYour job here is done, \nwe\'ll get someone else to finish the job.', style);
+   	   }
+   	   var finalScore = game.add.text(115, 550, 'Amount of Damage caused: \n$' + String(score), style);
+	}
 };
